@@ -1,0 +1,112 @@
+.image-container {
+	width: 400px;
+	height: 400px;
+	top: 100px;
+	position: relative;
+	margin: auto;
+	background-color: gray;
+}
+
+.displayed-image {
+	width: 100%;
+	height: 100%;
+
+}
+.image-details {
+	width: 400px;
+	height: 100px;
+	top:50px;
+	position: relative;
+	margin: auto;
+	display: flex;
+	text-align: center;
+	color: black;
+}
+
+.loved-it {
+	position: absolute;
+	width: 25%;
+	font-size: 10px;
+}
+
+.loved-it button {
+	width: 100px;
+	height: 30px;
+	top: 30px;
+	position: relative;
+	border: none;
+
+}
+
+.hated-it button {
+	width: 100px;
+	height: 30px;
+	top: 30px;
+	position: relative;
+	border: none;
+
+}
+
+.hated-it {
+	position: absolute;
+	width: 25%;
+	font-size: 10px;
+}
+
+.vote-image {
+	position: sticky;
+	z-index: 4;
+}
+
+.image-title-container {
+	top:35%;
+	position: relative;
+	width: 50%;
+	font-size: 2vw;
+
+
+}
+
+/* will fix in next commit as text is not positioned
+	in a desirable manor */
+
+.image-title-text {
+	position: relative;
+	top: -17.5%;
+}
+
+.voting-buttons {
+	position: relative;
+}
+
+.vote-button-text {
+	transition-duration: 0.1s;
+	position: sticky;
+	z-index: 5;
+	display: none;
+}
+
+.votes-show {
+	color: blue;
+}
+
+.user-actions {
+	top: 100px;
+	position: relative;
+}
+
+.redirect-button {
+
+	display: flex;
+	position: absolute;
+	width: 150px;
+	height: 50px;
+}
+
+.vote-on-images-page {
+	float: right;
+}
+
+.upload-button {
+	float: left;
+}

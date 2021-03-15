@@ -1,0 +1,139 @@
+html,body {
+	margin: 0;
+	font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+}
+
+/* initialisation for any hyperlinks */
+	a {
+		text-decoration: none;
+		color: black;
+	}
+	a:visited {
+		text-decoration: none;
+		color: black;
+	}
+
+/* title bar full container */
+
+	.title-bar {
+		top: 0;
+		width: 100%;
+		height: 100px;
+		position: fixed;
+		display: flex;
+		z-index: 3;
+		background-color: white;
+
+	}
+
+/* title bar quadrants  */
+
+	.title-search {
+		width: 25%;
+		height: 100%;
+		text-align: center;
+
+	}
+
+	.title-text-container {
+		width: 50%;
+		height: 100%;
+
+	}
+
+	.title-account {
+		width: 25%;
+		height: 100%;
+
+	}
+
+/* title bar search bar */
+
+	.search {
+	  width: 50px;
+	  height: 50px;
+	  font-size:20px;
+	  border-radius: 25px;
+	  background-color: lightgray;
+	  border: none;
+	  text-align: center;
+	  transition-duration: 0.2s;
+	  margin: auto;
+	  position: relative;
+	  top: 25px;
+	  background-image: url('http://www.clker.com/cliparts/z/1/T/u/9/2/search-icon-hi.png');
+	  background-size: 25px;
+	  background-position: center;
+	  background-repeat: no-repeat;
+	  font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+
+	}
+
+	input.search:focus {
+		background-image:none;
+	}
+
+	.search-active {
+	  width: 75%;
+	  border-radius: 10px;
+	}
+
+	input:focus {
+		outline-width: 0;
+	}
+
+/* title text */
+	.title-text {
+		font-size: 50px;
+		text-align: center;
+		top: -10%;
+		position: relative;
+	}
+
+/* title bar account/sign in */
+
+	/* sign in button */
+		.title-button {
+			position: relative;
+			top: 40px;
+			background-color: transparent;
+			border: none;
+			cursor: pointer;
+			font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+			font-size: 20px;
+			width: 100%;
+			height: 30%;
+		}
+
+		.title-button:hover{
+			font-size: 15px;
+			transition-duration: 0.1s;
+		}
+
+	/* account image when logged in */
+
+		.image-frame {
+			width: 60px;
+			height: 60px;
+			position: relative;
+			top: 20px;
+			margin: auto;
+
+		}
+
+		.image-frame img {
+			width: 100%;
+			height: 100%;
+			border-radius: 50%;
+		}
+
+
+/* main page content initialisation */
+
+	.main-content {
+		width: 100vw;
+		height: 100vh;
+		position: relative;
+		z-index: 2;
+		top: 150px;
+	}

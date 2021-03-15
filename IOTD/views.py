@@ -10,10 +10,17 @@ def home(request):
 
 	return response
 	#return HttpResponse("This is the homepage.")
+
 def voteImage(request):
 	return HttpResponse("Vote image here.")
 def login(request):
-	return HttpResponse("Login here.")
+
+	context_dict = {}
+	response = render(request, 'IOTD/loginpage.html', context=context_dict)
+
+	return response
+	#return HttpResponse("Login here.")
+
 def upload(request):
 	return HttpResponse("Upload here.")
 def myAccount(request):
