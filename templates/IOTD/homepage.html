@@ -16,29 +16,27 @@
 {% endblock %}
 
 {% block maincontent_block %}
+
    	<div class="image-container">
+         
+         <div class="loved-it"></div>
+            <h1 class="loved-it-text"><span>Loved It</span></h1>
+            <h2 class="loved-it-counter"><span>10.5k</span></h2>
+         <div class="hated-it"></div>
+            <h1 class="hated-it-text"><span>Hated It</span></h1>
+            <h2 class="hated-it-counter"><span>1.25k</span></h2>
 
    		<img class="displayed-image" src="{% static 'images/image-of-the-day/placeholder.png' %}" alt="image">
 
    	</div>
 
    	<div class="image-details">
-
-   		<div class="loved-it voting-buttons">
-   			<button class="vote-image"> Loved It </button>
-   		</div>
-
    		<div class="image-title-container"><p class="image-title-text">Image</p></div>
-
-   		<div class="hated-it voting-buttons">
-   			<button class="vote-image"> Hated It </button>
-   		</div>
-
    	</div>
 
    	<div class="user-actions">
-   		<button class="redirect-button vote-on-image-page"></button>
-   		<button class="redirect-button upload-button"></button>
+   		<button class="redirect-button vote-on-image-page">vote</button>
+   		<button class="redirect-button upload-button">upload</button>
 
    	</div>
 

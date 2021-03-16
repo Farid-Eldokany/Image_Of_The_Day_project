@@ -1,10 +1,10 @@
 .image-container {
+	z-index: 5;
 	width: 400px;
 	height: 400px;
-	top: 100px;
+	top: 150px;
 	position: relative;
 	margin: auto;
-	background-color: gray;
 }
 
 .displayed-image {
@@ -24,34 +24,91 @@
 }
 
 .loved-it {
+	z-index: 10;
 	position: absolute;
-	width: 25%;
+	width: 50%;
 	font-size: 10px;
-}
-
-.loved-it button {
-	width: 100px;
-	height: 30px;
-	top: 30px;
-	position: relative;
-	border: none;
+	height: 400px;
+	transition-duration: 0.1;
 
 }
 
-.hated-it button {
-	width: 100px;
-	height: 30px;
-	top: 30px;
-	position: relative;
-	border: none;
+.loved-it:hover {
+	cursor: pointer;
+}
 
+.loved-it-text {
+	color: white;
+	z-index: 11;
+	left: 5%;
+	position: absolute;
+	font-size: 20px;
+	bottom: 0%;
+	transition-duration: 0.1s;
+
+}
+
+.loved-it-text span {
+	background-color: black;
+	transition-duration: 0.1s;
+}
+
+.loved-it-counter {
+	color: white;
+	z-index: 11;
+	left:5%;
+	position: absolute;
+	font-size: 15px;
+	top: 0%;
+}
+
+.loved-it-counter span {
+	background-color: black;
 }
 
 .hated-it {
+	z-index: 10;
 	position: absolute;
-	width: 25%;
+	width: 50%;
+	right: 0%;
 	font-size: 10px;
+	height: 400px;
+	transition-duration: 0.1s;
+
 }
+
+.hated-it:hover {
+	cursor: pointer;
+}
+
+.hated-it-text {
+	color: white;
+	z-index: 11;
+	position: absolute;
+	right: 5%;
+	font-size: 20px;
+	bottom: 0%;
+	transition-duration: 0.1s;
+}
+
+.hated-it-text span{
+	background: black;
+	transition-duration: 0.1s;
+}
+
+.hated-it-counter {
+	color: white;
+	z-index: 11;
+	right:5%;
+	position: absolute;
+	font-size: 15px;
+	top: 0%;
+}
+
+.hated-it-counter span {
+	background-color: black;
+}
+
 
 .vote-image {
 	position: sticky;
@@ -93,20 +150,20 @@
 .user-actions {
 	top: 100px;
 	position: relative;
+	margin: auto;
+	text-align:center;
+	word-spacing: 100px;
 }
 
 .redirect-button {
-
-	display: flex;
-	position: absolute;
+	position: relative;
 	width: 150px;
 	height: 50px;
 }
 
 .vote-on-images-page {
-	float: right;
 }
 
 .upload-button {
-	float: left;
+
 }
