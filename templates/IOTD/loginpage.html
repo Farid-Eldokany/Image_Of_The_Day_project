@@ -2,8 +2,8 @@
 {% load staticfiles %}
 
 {% block importblock %}
-	<link rel="stylesheet" href="{% static 'css/login.css' %}">
-	<script src="{% static 'js/login.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <script src="{% static 'js/login.js' %}"></script>
 
 {% endblock %}
 
@@ -19,24 +19,18 @@
     </div>
 
 
-   	<div class="login-area">
-    <label for="username">
-    	<b>Username</b>
-    </label></br>
-    <input type="text" placeholder="Enter Username" name="uname" required>
-    </br>
+    <form id="user_form" method="post" action="{% url 'IOTD:login' %}"
+      enctype="multipart/form-data">
 
-    <label for="password">
-    	<b>Password</b>
-    </label></br>
-    <input type="password" placeholder="Enter Password" name="psw" required></br>
+    {% csrf_token %}
 
-    <label for="confirm-password">
-    	<b class="on-signup">Confirm Password</b>
-    </label></br>
-    <input class="on-signup" type="password" placeholder="Enter Password" name="psw" required></br>
+    <!-- Display each form -->
+    {{ user_form.as_p }}
 
-    <button id="login" type="submit">Login</button>
-    <button id="signup" type="submit">Sign Up</button>
-  </div>
+    <!-- Provide a button to click to submit the form. -->
+    <input type="submit" name="Signup" value="Signup" />
+    <input type="submit" name="Login" value="Login" />
+</form>
+
+
 {% endblock %}
