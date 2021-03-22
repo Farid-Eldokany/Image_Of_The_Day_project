@@ -21,23 +21,22 @@
          
          <div class="loved-it"></div>
             <h1 class="loved-it-text"><span>Loved It</span></h1>
-            <h2 class="loved-it-counter"><span>10.5k</span></h2>
+            <h2 class="loved-it-counter"><span>{{images.0.likes}}</span></h2>
          <div class="hated-it"></div>
             <h1 class="hated-it-text"><span>Hated It</span></h1>
-            <h2 class="hated-it-counter"><span>1.25k</span></h2>
+            <h2 class="hated-it-counter"><span>{{images.0.dislikes}}</span></h2>
 
-   		<img class="displayed-image" src="{% static 'images/image-of-the-day/placeholder.png' %}" alt="image">
+   		<img class="displayed-image" src= {{images.0.picture.url}} alt="image">
 
    	</div>
 
    	<div class="image-details">
    		<div class="image-title-container"><p class="image-title-text">Image</p></div>
    	</div>
-
+    {% if user.is_authenticated %}
    	<div class="user-actions">
-   		<button class="redirect-button vote-on-image-page">vote</button>
-   		<button class="redirect-button upload-button">upload</button>
-
+   		<a class="redirect-button vote-on-image-page" href="vote-image/">vote</a>
+   		<a class="redirect-button upload-button" href="upload/">upload</a>
    	</div>
-
+    {% endif %}}
 {% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'IOTD/base.html' %}
+{% load staticfiles %}
+{% block title_block %} My account {% endblock %}
+{% block maincontent_block %}
+<style type=text/css> h2{ height:100px;} </style>
+<h2></h2>
+<div >
+    <h5><img src="{{image.picture.url}}" alt="Mountain" width="200" height="200"></h5>
+     <h5>Likes: {{image.likes}}</h5>
+     <h5>Dislikes: {{image.dislikes}}</h5>
+</div>
+{% endblock %}
