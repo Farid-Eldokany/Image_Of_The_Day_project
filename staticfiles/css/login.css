@@ -1,10 +1,10 @@
 .login-area {
 	width: 400px;
 	height: 400px;
-	top: 150px;
 	position: relative;
 	margin: auto;
 	text-align: center;
+
 }
 
 .on-signup {
@@ -16,9 +16,87 @@
 }
 
 .login-title {
-	font-size: 20px;
+	font-size: 40px;
 	width: 100%;
 	text-align: center;
 	position: relative;
-	top: 125px;
+	top: 87.5px;
 }
+
+.input-title {
+	font-size: 35px;
+	left: -75px;
+	top: 20px;
+	position: relative;
+	font-family: "Courier New";
+
+}
+
+.login-input-area {
+	top: 75px;
+	position: relative;
+	text-align: center;
+
+}
+
+
+.details-box {
+	border-color: black;
+	border-radius: 50px;
+	height: 100px;
+	width: 400px;
+	border-width: 4px;
+	font-size: 40px;
+	text-align: center;
+
+}
+
+.submit-buttons {
+	border-radius: 15px;
+	border-color: black;
+	background-color: white;
+	transition-duration: 0.2s;
+	width: 150px;
+	height: 50px;
+	font-weight:bold;
+	border-width: 3px;
+
+}
+
+.submit-buttons:hover {
+	background-color: black;
+	color: white;
+	font-size: 30px;
+	width: 160px;
+	height: 40px;
+	cursor: pointer;
+
+}
+
+input {
+	font-size: 35px;
+	font-family: "Courier New";
+}
+
+span {
+	background-color: white;
+	padding: 0 5px;
+
+}
+
+h1 span {
+	padding: 5px;
+	border-radius: 15px;
+}
+
+form {
+	margin: 0 auto;
+	width: 500px;
+	background-color: white;
+	border-radius: 15px;
+}
+
+p {
+	margin: 0;
+}
+

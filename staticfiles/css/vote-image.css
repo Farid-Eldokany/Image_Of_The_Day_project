@@ -1,21 +1,75 @@
-.image-container {
-	z-index: 5;
-	width: 400px;
-	height: 400px;
-	top: 200px;
-	position: relative;
-	margin: auto;
-	background-color: white;
-	padding: 40px;
-	border-color: white;
-	border-radius: 35px;
-}
+	body {
+		margin: 0;
+		background-color: #EAF1F1;
+	}
+		
+	.showcase {
+		width: 400px;
+		height: 450px;
+		margin: 25px;
+		position: relative;
+
+	}	
+
+	.showcaseContainer {
+		display: grid;
+		width: 1200px;
+		grid-template-columns: auto auto auto;
+ 		margin: 200px auto;
+ 		background-color: white;
+ 		padding: 50px;
+ 		border-radius: 35px;
+ 		overflow-y: scroll;
+ 		align-items: center;
+
+
+
+ 	}
+
+
+ 	.showcaseImage {
+  		height: 400px;
+  		background-size: cover;
+		height: 400px;
+		transition-duration: 1s;
+		z-index: 5;
+		position: relative;
+		display: inline-block;
+		vertical-align: middle;
+		max-height: 400px;
+		background-color: violet;
+	}
+
+	.base-footer {
+		position: relative;
+	}
+
+	@media only screen and (max-width: 1400px) {
+
+
+		.showcaseContainer {
+			width: 800px;
+			grid-template-columns: auto auto;
+		}
+
+	}
+
+	@media only screen and (max-width: 1000px) {
+
+		.showcaseContainer {
+			width: 400px;
+			grid-template-columns: auto;
+		}
+	}
 
 .displayed-image {
-	width: 100%;
-	height: 100%;
-
+	display: inline-block;
+    width: 400px;
+    vertical-align: middle;
+    max-height: 400px;
 }
+
+
 .image-details {
 	width: 400px;
 	height: 100px;
@@ -44,11 +98,14 @@
 .loved-it-text {
 	color: white;
 	z-index: 11;
+	background-color: black;
+	border: none;
 	left: 12.5%;
 	position: absolute;
 	font-size: 20px;
 	bottom: 10%;
 	transition-duration: 0.1s;
+	content: 'Loved It';
 
 }
 
@@ -59,11 +116,13 @@
 
 .loved-it-counter {
 	color: white;
+	background-color: black;
 	z-index: 11;
 	left:12.5%;
 	position: absolute;
 	font-size: 15px;
-	top: 10%;
+	top: 5%;
+
 }
 
 .loved-it-counter span {
@@ -88,11 +147,14 @@
 .hated-it-text {
 	color: white;
 	z-index: 11;
+	background-color: black;
+	border: none;
 	position: absolute;
 	right: 12.5%;
 	font-size: 20px;
 	bottom: 10%;
 	transition-duration: 0.1s;
+	content: 'Hated It';
 }
 
 .hated-it-text span{
@@ -102,68 +164,15 @@
 
 .hated-it-counter {
 	color: white;
+	background-color: black;
 	z-index: 11;
 	right:12.5%;
 	position: absolute;
 	font-size: 15px;
-	top: 10%;
+	top: 5%;
 }
 
 .hated-it-counter span {
 	background-color: black;
 }
 
-
-.vote-image {
-	position: sticky;
-	z-index: 4;
-}
-
-.image-title-container {
-	top:35%;
-	position: relative;
-	width: 50%;
-	font-size: 2vw;
-
-
-}
-
-/* will fix in next commit as text is not positioned
-	in a desirable manor */
-
-.image-title-text {
-	position: relative;
-	top: -17.5%;
-}
-
-.voting-buttons {
-	position: relative;
-}
-
-.vote-button-text {
-	transition-duration: 0.1s;
-	position: sticky;
-	z-index: 5;
-	display: none;
-}
-
-.votes-show {
-	color: blue;
-}
-
-.user-actions {
-	top: 150px;
-	position: relative;
-	margin: auto;
-	text-align:center;
-	word-spacing: 100px;
-}
-
-.redirect-button {
-	position: relative;
-	width: 150px;
-	height: 50px;
-	background-color: white;
-	border-right: 35px;
-	font-size: 50px;
-}

@@ -2,20 +2,44 @@
 {% load staticfiles %}
 {% block title_block %} Vote Area {% endblock %}
 {% block maincontent_block %}
-<style type=text/css> h2{ height:100px;} </style> 
-{% for image in images %}
-<h2></h2>
-<div >
-    <h5><img src="{{image.picture.url}}" alt="Mountain" width="200" height="200"></h5>
-     <h5>Likes: {{image.likes}}</h5>
-     <h5>Dislikes: {{image.dislikes}}</h5>
-     <form id="user_form" method="post" action="{% url 'IOTD:voteImage' %}"16 enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ vote_form.as_p }}
-        <h5><input type="submit" name="like" value={{image.image_id}}> Like</h5>
-        <h5><input type="submit" name="dislike" value={{image.image_id}}> Dislike</h5>
-        </form>
-</div>
-<hr>
-{% endfor %}
+{% block importblock %}
+    <link rel="stylesheet" href="{% static 'css/vote-image.css' %}">
+    <script src="{% static 'js/vote-image.js' %}"></script>
+
+{% endblock %}
+
+    <div class="showcaseContainer">
+
+        {% for image in images %}
+
+
+        <div class="showcaseImage" id="{{image}}{{image.id}}">
+
+
+           <form id="user_form{{image.image_id}}" method="post" action="/home/vote-image/" 16="" enctype="multipart/form-data">
+                {% csrf_token %}
+                     <div class="loved-it">
+                    
+                        <button class="loved-it-text" type="submit" name="like" value="{{image.image_id}}">Loved It</button>
+                        <h2 class="loved-it-counter"><span><b>{{image.likes}}</b></span></h2>
+                    </div>
+                     <div class="hated-it">
+
+                        <button class="hated-it-text" type="submit" name="dislike" value="{{image.image_id}}">Hated It</button>
+                        <h2 class="hated-it-counter"><span><b>{{image.dislikes}}</b></span></h2>                         
+
+                     </div>
+                        <!--<img class="displayed-image" src={{image.picture.url}} alt="image">-->
+                
+
+            
+                <!--<h5>{{image.name}}</h5>-->
+             </form>
+         </div>
+         {% endfor %}
+     </div>
+
+         
+
+
 {% endblock %}

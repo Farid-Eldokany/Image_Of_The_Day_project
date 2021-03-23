@@ -17,16 +17,18 @@
 
 {% block maincontent_block %}
 
+<div style="height:900px">
+
    	<div class="image-container">
          
-         <div class="loved-it"></div>
-            <h1 class="loved-it-text"><span>Loved It</span></h1>
-            <h2 class="loved-it-counter"><span>{{images.0.likes}}</span></h2>
-         <div class="hated-it"></div>
-            <h1 class="hated-it-text"><span>Hated It</span></h1>
-            <h2 class="hated-it-counter"><span>{{images.0.dislikes}}</span></h2>
+        <div class="loved-it"></div>
+        <h1 class="loved-it-text"><span><b>Loved It</b></span></h1>
+        <h2 class="loved-it-counter"><span><b>{{images.0.likes}}</span></h2>
+        <div class="hated-it"></div>
+        <h1 class="hated-it-text"><span><b>Hated It</b></span></h1>
+        <h2 class="hated-it-counter"><span><b>{{images.0.dislikes}}</span></b></h2>
 
-   		<img class="displayed-image" src= {{images.0.picture.url}} alt="image">
+   		<img class="displayed-image" src={{images.0.picture.url}} alt="image">
 
    	</div>
 
@@ -38,5 +40,6 @@
    		<a class="redirect-button vote-on-image-page" href="vote-image/">vote</a>
    		<a class="redirect-button upload-button" href="upload/">upload</a>
    	</div>
-    {% endif %}}
+    {% endif %}
+</div>
 {% endblock %}

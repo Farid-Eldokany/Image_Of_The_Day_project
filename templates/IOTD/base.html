@@ -16,9 +16,17 @@
 	</head>
 	<body>
 
+		<div class="holder">
+
 		<div class="title-bar">
 			<div class="title-search">
 				<input class="search">
+
+				<div class="search-results">
+					<p>Result 1</p><p>Result 2</p><p>Result 3</p>
+					<p>Result 4</p><p>Result 5</p><p>Result 6</p>
+				</div>
+
 			</div>
 
 			<div class="title-text-container">
@@ -39,10 +47,29 @@
 	    		{% endif %}
 			</div>
 		</div>
-
+		<div class="main-content">
 		{% block maincontent_block %}
-			<div class="main-content"></div>
+			
 		{% endblock %}
+		</div>	
+		<footer class="base-footer">
+			<div class="footer-box-2">
+				
+				{% if user.is_authenticated %}
+					<a href="{% url 'IOTD:logout' %}"> Log Out</a>&nbsp;&nbsp;&nbsp;
+					<a href="{% url 'IOTD:myAccount' %}"> My Account</a>&nbsp;&nbsp;&nbsp;
+					<a href="{% url 'IOTD:voteImage' %}"> Vote For An Image</a>&nbsp;&nbsp;&nbsp;
+					<a href="{% url 'IOTD:upload' %}"> Upload An Image</a>&nbsp;&nbsp;&nbsp;
+				{% else %}
+					<a href="{% url 'IOTD:login' %}"> Sign In</a>	&nbsp;&nbsp;&nbsp;
+				{% endif %}
+
+				<a href="{% url 'IOTD:home' %}"> Home</a>&nbsp;&nbsp;&nbsp;
+
+
+			</div>
+		</footer>
+	</div>
 
 	</body>
 </html>

@@ -12,25 +12,44 @@
 
 {% block maincontent_block %}
 
+<div style="height:850px">
     <div class="login-title">
         
-        <h1>Login</h1>
+        <h1><span>Login</span></h1>
 
     </div>
+
+    <div class="login-input-area">
 
 
     <form id="user_form" method="post" action="{% url 'IOTD:login' %}"
       enctype="multipart/form-data">
 
-    {% csrf_token %}
+      {% csrf_token %}
 
-    <!-- Display each form -->
-    {{ user_form.as_p }}
+      <br>
 
+    <p>
+        <div style="-webkit-user-select: none; user-select:none;" >
+            <p class="input-title" for="id_username"><span><b>Username</b></span></p>
+      </div>
+        <input class="details-box" type="text" name="username" maxlength="150" required="" id="id_username"> 
+    </p>
+
+    <p>
+        <div style="-webkit-user-select: none; user-select:none;">
+            <p class="input-title" for="id_password"><span><b>Password</b></span></p> 
+        </div>
+        <input class="details-box" type="password" name="password" required="" id="id_password">
+    </p>
     <!-- Provide a button to click to submit the form. -->
-    <input type="submit" name="Signup" value="Signup" />
-    <input type="submit" name="Login" value="Login" />
+    <br>
+    <br>
+    <input class="submit-buttons" type="submit" name="Signup" value="Signup" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input class="submit-buttons" type="submit" name="Login" value="Login" />
+    <br><br><br>
 </form>
 
+</div>
 
 {% endblock %}

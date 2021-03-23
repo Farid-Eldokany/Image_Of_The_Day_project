@@ -14,8 +14,6 @@ $(function(){
 		$(".loved-it-counter").hide();
 	})
 
-	
-
 	$(".hated-it").mouseover(function(){
 		$(".hated-it-text").show();
 		$(".hated-it-counter").show();

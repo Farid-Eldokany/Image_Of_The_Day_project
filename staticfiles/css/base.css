@@ -1,12 +1,20 @@
 html,body {
 	margin: 0;
 	font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+	overflow: scroll;
+	height: 100%;
+}
+
+.holder {
+	display: grid;
 }
 
 /* initialisation for any hyperlinks */
 	a {
 		text-decoration: none;
 		color: black;
+		transition-duration: 0.5s;
+		font-weight: bold;
 	}
 	a:visited {
 		text-decoration: none;
@@ -16,14 +24,25 @@ html,body {
 /* title bar full container */
 
 	.title-bar {
+
 		top: 0;
 		width: 100%;
 		height: 100px;
 		position: fixed;
 		display: flex;
-		z-index: 3;
+		z-index: 20;
 		background-color: white;
 
+	}
+
+	@media only screen and (max-width: 960px) {
+		.title-bar{
+			height: 150px;
+		}
+
+		.main-content {
+			top: 50px;
+		}
 	}
 
 /* title bar quadrants  */
@@ -53,11 +72,10 @@ html,body {
 	  width: 50px;
 	  height: 50px;
 	  font-size:20px;
-	  border-radius: 25px;
-	  background-color: lightgray;
-	  border: none;
+	  border-radius: 50%;
 	  text-align: center;
 	  transition-duration: 0.2s;
+	  border-color: transparent;
 	  margin: auto;
 	  position: relative;
 	  top: 25px;
@@ -66,7 +84,7 @@ html,body {
 	  background-position: center;
 	  background-repeat: no-repeat;
 	  font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
-
+	  padding: 5px;
 	}
 
 	input.search:focus {
@@ -75,7 +93,7 @@ html,body {
 
 	.search-active {
 	  width: 75%;
-	  border-radius: 10px;
+	  border-radius: 0px;
 	}
 
 	input:focus {
@@ -86,6 +104,18 @@ html,body {
 		color: transparent;
 	}
 
+	.search-results {
+		z-index: 40;
+		position: fixed;
+		top: 80px;
+		width: 20vw;
+		left: 2.5vw;
+		height: 200px;
+		background-color: #b4cfc7;
+		color: #535c54;
+		overflow-y: scroll;
+	}
+
 /* title text */
 	.title-text {
 		font-size: 50px;
@@ -94,28 +124,24 @@ html,body {
 		position: relative;
 	}
 
-	.title-text:hover {
-		font-size: 49px;
-		transition-duration: 0.1s;
-	}
 
 /* title bar account/sign in */
 
 	/* sign in button */
 		.title-button {
 			position: relative;
-			top: 40px;
+			
 			background-color: transparent;
 			border: none;
 			cursor: pointer;
 			font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
 			font-size: 20px;
 			width: 100%;
-			height: 30%;
+			height: 100%;
 		}
 
 		.title-button:hover{
-			font-size: 15px;
+			font-size: 18px;
 			transition-duration: 0.1s;
 		}
 
@@ -140,9 +166,36 @@ html,body {
 /* main page content initialisation */
 
 	.main-content {
+		background-color: #EAF1F1;
 		width: 100vw;
-		height: 100vh;
 		position: relative;
 		z-index: 2;
-		top: 150px;
+	}
+
+/* footer of base html */
+
+	.base-footer {
+		display: flex;
+		padding: 25px;
+		width: 100vw;
+		height: 150px;
+		background-color: white;
+
+		margin: 0;
+      	position: relative;
+      	bottom: 0;
+      	right: 0;
+	}
+
+	.footer-box-2 {
+		width: 100vw;
+		display: inline-block;
+		line-height: 135px;
+		text-align: center;
+
+	}
+
+	a:hover {
+		color: white;
+		background-color: black;
 	}
