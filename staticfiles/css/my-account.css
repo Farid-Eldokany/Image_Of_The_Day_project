@@ -1,0 +1,142 @@
+html {
+	overflow-x: hidden;
+}
+
+.image-container {
+	z-index: 5;
+	width: 400px;
+	height: 400px;
+	top: 150px;
+	position: relative;
+	margin: auto;
+	background-color: white;
+	padding: 40px;
+	border-color: white;
+	border-radius: 35px;
+}
+
+.displayed-image {
+	width: 400px;
+	height:  400px;
+
+}
+.image-details {
+	width: 400px;
+	height: 100px;
+	top:50px;
+	position: relative;
+	margin: auto;
+	display: flex;
+	text-align: center;
+	color: black;
+}
+
+.loved-it {
+	z-index: 10;
+	position: absolute;
+	width: 50%;
+	font-size: 20px;
+	height: 400px;
+	transition-duration: 0.1;
+
+}
+
+.loved-it:hover {
+	cursor: pointer;
+}
+
+.loved-it-text {
+	color: white;
+	z-index: 11;
+	left: 12.5%;
+	position: absolute;
+	font-size: 20px;
+	bottom: 10%;
+	transition-duration: 0.1s;
+
+}
+
+.loved-it-text span {
+	background-color: black;
+	transition-duration: 0.1s;
+}
+
+.loved-it-counter {
+	color: white;
+	z-index: 11;
+	left:12.5%;
+	position: absolute;
+	font-size: 15px;
+	top: 10%;
+}
+
+.loved-it-counter span {
+	background-color: black;
+}
+
+.hated-it {
+	z-index: 10;
+	position: absolute;
+	width: 50%;
+	right: 0%;
+	font-size: 20px;
+	height: 400px;
+	transition-duration: 0.1s;
+
+}
+
+.hated-it:hover {
+	cursor: pointer;
+}
+
+.hated-it-text {
+	color: white;
+	z-index: 11;
+	position: absolute;
+	right: 12.5%;
+	font-size: 20px;
+	bottom: 10%;
+	transition-duration: 0.1s;
+}
+
+.hated-it-text span{
+	background: black;
+	transition-duration: 0.1s;
+}
+
+.hated-it-counter {
+	color: white;
+	z-index: 11;
+	right:12.5%;
+	position: absolute;
+	font-size: 15px;
+	top: 10%;
+}
+
+.hated-it-counter span {
+	background-color: black;
+}
+
+.users-score {
+	margin: 0 auto;
+	top: 200px;
+	position: relative;
+	text-align: center;
+	height: auto;
+	width: auto;
+	margin: 0;
+
+
+}
+
+h1,h3 {
+	background-color: white;
+
+}
+
+.my-account-title {
+	position: relative;
+	top: 100px;
+	font-size: 40px;
+	text-align: center;
+}
