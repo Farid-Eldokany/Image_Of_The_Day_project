@@ -1,8 +1,42 @@
-div.form
-{
-    position: absolute;
-    width: 300px;
+body {
+	margin: 0;
+	background-color: #EAF1F1;
+}
+
+.upload-title {
+	
+	position: relative;
+	top: 100px;
+	text-align: center;
+	font-size: 30px;
+}
+
+h1 span {
+	background-color: white;
+	padding: 20px;
+	border-radius: 35px;
+}
+
+
+div.upload-area {
+    position: relative;
+    width: 500px;
+    height: auto;
     top: 100px;
-    right: 500px;
-    
+    text-align: center;
+    background-color: white;
+	padding: 20px;
+	border-radius: 35px;
+	margin: 0 auto;
+}
+
+button {
+	border-radius: 15px;
+	border-color: black;
+	background-color: white;
+	transition-duration: 0.2s;
+	width: 75px;
+	height: 25px;
+	font-weight:bold;
+	border-width: 5px;
 }

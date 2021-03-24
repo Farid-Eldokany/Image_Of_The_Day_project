@@ -37,9 +37,7 @@
 
 }
 
-.loved-it:hover {
-	cursor: pointer;
-}
+
 
 .loved-it-text {
 	color: white;
@@ -79,10 +77,6 @@
 	height: 400px;
 	transition-duration: 0.1s;
 
-}
-
-.hated-it:hover {
-	cursor: pointer;
 }
 
 .hated-it-text {

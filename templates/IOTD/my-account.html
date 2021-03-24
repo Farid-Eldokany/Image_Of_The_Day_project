@@ -1,12 +1,33 @@
 {% extends 'IOTD/base.html' %}
 {% load staticfiles %}
+{% block importblock %}
+	<link rel="stylesheet" href="{% static 'css/my-account.css' %}">
+	<script src="{% static 'js/my-account.js' %}"></script>
+{% endblock %}
 {% block title_block %} My account {% endblock %}
 {% block maincontent_block %}
-<style type=text/css> h2{ height:100px;} </style>
-<h2></h2>
-<div >
-    <h5><img src="{{image.picture.url}}" alt="Mountain" width="200" height="200"></h5>
-     <h5>Likes: {{image.likes}}</h5>
-     <h5>Dislikes: {{image.dislikes}}</h5>
-</div>
+
+	<div style="height:900px">
+
+		<h1 class="my-account-title"> Your Image Today</h1>
+
+	   	<div class="image-container">
+	        <div class="loved-it"></div>
+	        <h1 class="loved-it-text"><span><b>Loved It</b></span></h1>
+	        <h2 class="loved-it-counter"><span><b>{{image.likes}}</span></h2>
+	        <div class="hated-it"></div>
+	        <h1 class="hated-it-text"><span><b>Hated It</b></span></h1>
+	        <h2 class="hated-it-counter"><span><b>{{image.dislikes}}</span></b></h2>
+
+	   		<img class="displayed-image" src={{image.picture.url}} alt="image">
+
+	   	</div>
+
+	   	<div class="users-score">
+	   		<span><h1> Total </h1>
+	   		<h3>0:likes</h3>
+	   		<h3>0:dislikes</h3></span>
+	   	</div>
+	</div>
+
 {% endblock %}
