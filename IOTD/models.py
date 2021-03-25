@@ -17,6 +17,6 @@ class UserProfile(models.Model):
     class Meta:
         ordering = ['-likes']
 class Vote(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    def __str__(self):
-        return self.user.username
+    vote_id=models.CharField(max_length=128,primary_key=True,unique=True)
+    vote_type=models.CharField(max_length=128,default='')
+

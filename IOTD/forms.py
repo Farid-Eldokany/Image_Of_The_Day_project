@@ -14,9 +14,10 @@ class UserProfileForm(forms.ModelForm):
         model = UserProfile
         fields = ('picture','name')
 class VoteForm(forms.ModelForm):
+    #image_id=forms.CharField(widget=forms.HiddenInput(), default='')
     class Meta:
         model = Vote
-        exclude=('user',)
+        exclude=('vote_id','vote_type')
 
         
 
