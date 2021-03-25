@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User
-from IOTD.models import UserProfile,Vote
+from IOTD.models import UserProfile,Vote,Day,Total
 class UserForm(forms.ModelForm):
 	password = forms.CharField(widget=forms.PasswordInput())
 	class Meta:
@@ -14,10 +14,17 @@ class UserProfileForm(forms.ModelForm):
         model = UserProfile
         fields = ('picture','name')
 class VoteForm(forms.ModelForm):
-    #image_id=forms.CharField(widget=forms.HiddenInput(), default='')
     class Meta:
         model = Vote
         exclude=('vote_id','vote_type')
+class DayForm(forms.ModelForm):
+    class Meta:
+        model=Day
+        exclude=('day',)
+class TotalForm(forms.ModelForm):
+    class Meta:
+        model=Total
+        exclude=("likes","dislikes","user")
 
         
 

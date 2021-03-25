@@ -19,4 +19,10 @@ class UserProfile(models.Model):
 class Vote(models.Model):
     vote_id=models.CharField(max_length=128,primary_key=True,unique=True)
     vote_type=models.CharField(max_length=128,default='')
+class Day(models.Model):
+    day=models.CharField(max_length=128)
+class Total(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    likes = models.IntegerField(default=0)
+    dislikes = models.IntegerField(default=0)
 

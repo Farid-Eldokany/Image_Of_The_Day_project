@@ -10,4 +10,5 @@ path('my-account/',views.myAccount,name='myAccount'),
 path('upload/my-account/',views.myAccount,name='myAccount'),
 path('vote-image/my-account/',views.myAccount,name='myAccount'),
 path('logout/', views.user_logout, name='logout'),
+path('error/', views.error, name='error'),
 ]

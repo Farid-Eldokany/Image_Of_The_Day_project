@@ -15,12 +15,9 @@
 <div class="upload-area">
     <form id="user_form" method="post" action="{% url 'IOTD:upload' %}"16 enctype="multipart/form-data">
         {% csrf_token %}
-        <p><label for="id_picture">Picture:</label><br> Currently: <a href="/media/profile_images/DSCF1025.JPG">profile_images/DSCF1025.JPG</a><br>
-		<input type="checkbox" name="picture-clear" id="picture-clear_id">
-		<label for="picture-clear_id">Clear</label><br>
-			Change:
+			Picture:
 		<input type="file" name="picture" accept="image/*" id="id_picture"></p>
-		<p><label for="id_name">Name:</label> <input type="text" name="name" value="flowers" maxlength="128" required="" id="id_name"><input type="hidden" name="likes" value="0" id="id_likes"><input type="hidden" name="dislikes" value="0" id="id_dislikes"><input type="hidden" name="image_id" id="id_image_id"></p>
+		<p><label for="id_name">Name:</label> <input type="text" name="name" maxlength="128" required="" id="id_name"><input type="hidden" name="likes" value="0" id="id_likes"><input type="hidden" name="dislikes" value="0" id="id_dislikes"><input type="hidden" name="image_id" id="id_image_id"></p>
 
         <button type="submit" name="submit" value="upload">upload</button>
     </form>
