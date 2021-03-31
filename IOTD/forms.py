@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User
-from IOTD.models import UserProfile,Vote,Day,Total
+from IOTD.models import UserProfile,Vote,Day,Total,Report
 class UserForm(forms.ModelForm):
 	password = forms.CharField(widget=forms.PasswordInput())
 	class Meta:
@@ -25,6 +25,9 @@ class TotalForm(forms.ModelForm):
     class Meta:
         model=Total
         exclude=("likes","dislikes","user")
-
+class ReportForm(forms.ModelForm):
+    class Meta:
+        model=Report
+        exclude=("report_id","image_id","username",'reason',)
         
 

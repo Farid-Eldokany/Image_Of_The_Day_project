@@ -1,0 +1,17 @@
+{% extends 'IOTD/base.html' %}
+{% load staticfiles %}
+{% block importblock %}
+    <link rel="stylesheet" href="{% static 'css/error.css' %}">
+{% endblock %}
+{% block title_block %} Report {% endblock %}
+{% block maincontent_block %}
+<div class="error"></div>
+<div class="error">
+    <form action = "" method = "post">
+        {% csrf_token %}
+    <label for="fname">Reason:</label>
+    <input type="text" id="reason" name="reason" ><br><br> 
+    <input type="submit" name="submit" value="submit"><br><br> 
+</form>
+</div>
+{% endblock %}

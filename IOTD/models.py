@@ -13,7 +13,7 @@ class UserProfile(models.Model):
     name=models.CharField(max_length=128,default='')
     image_id=models.CharField(max_length=128)
     def __str__(self):
-        return self.name
+        return f"{self.name}"
     class Meta:
         ordering = ['-likes']
 class Vote(models.Model):
@@ -25,4 +25,10 @@ class Total(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     likes = models.IntegerField(default=0)
     dislikes = models.IntegerField(default=0)
-
+class Report(models.Model):
+    report_id=models.CharField(max_length=128,primary_key=True,unique=True)
+    image_id=models.CharField(max_length=128,default='')
+    username=models.CharField(max_length=128,default='')
+    reason=models.CharField(max_length=128,default='')
+    def __str__(self):
+        return f"{self.image_id}"

@@ -11,4 +11,5 @@ path('upload/my-account/',views.myAccount,name='myAccount'),
 path('vote-image/my-account/',views.myAccount,name='myAccount'),
 path('logout/', views.user_logout, name='logout'),
 path('error/', views.error, name='error'),
+path(r'^(?P<report_id>\d+)/report/',views.image_report,name="image_report")
 ]

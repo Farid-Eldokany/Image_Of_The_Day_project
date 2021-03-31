@@ -8,7 +8,11 @@ html,body {
 .holder {
 	display: grid;
 }
-
+div.search{
+    position: relative;
+    width: 500px;
+    height:  500 px;
+}
 /* initialisation for any hyperlinks */
 	a {
 		text-decoration: none;

@@ -52,7 +52,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'Image_Of_The_Day_project.urls'
-
+var_wqfecdkz = "IOTD.context_processors.profiles"
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -65,6 +65,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
+                var_wqfecdkz,
             ],
         },
     },
