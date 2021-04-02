@@ -20,22 +20,22 @@
 <div style="height:900px">
 
    	<div class="image-container">
-        <div class="loved-it"></div>
+
         <div class="name">
-            <h2 class="name-text"><span><b>{{images.0.name}}</b></span></h2>
+            <h2 class="name-text">
+              <span><b>Loved It:</b></span>
+              <span><b>{{images.0.likes}}&nbsp;&nbsp;&nbsp;</b></span>
+
+              <span><b>'{{images.0.name}}'&nbsp;&nbsp;&nbsp;</b></span>
+
+              <span><b>Hated It:</b></span>
+              <span><b>{{images.0.dislikes}}</b></span>
+            </h2>
         </div>
-        <h1 class="loved-it-text"><span><b>Loved It</b></span></h1>
-        <h2 class="loved-it-counter"><span><b>{{images.0.likes}}</span></h2>
-        <div class="hated-it"></div>
-        <h1 class="hated-it-text"><span><b>Hated It</b></span></h1>
-        <h2 class="hated-it-counter"><span><b>{{images.0.dislikes}}</span></b></h2>
+
 
    		<img class="displayed-image" src={{images.0.picture.url}} alt="image">
 
-   	</div>
-
-   	<div class="image-details">
-   		<div class="image-title-container"><p class="image-title-text">Image</p></div>
    	</div>
     {% if user.is_authenticated %}
    	<div class="user-actions">

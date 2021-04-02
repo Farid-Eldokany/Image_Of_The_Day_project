@@ -17,15 +17,12 @@ $(function(){
     var $target = $(event.target);
 
     if(!$target.closest(".search").length && $(".search").hasClass("search-active")){
-        
       if(!$target.closest(".search-results").length) {
         $(".search-results").slideUp();
         $(".search").removeClass("search-active");
         $(".search").addClass("remove-input");
 
       }
-      
-
     }
   });
 });

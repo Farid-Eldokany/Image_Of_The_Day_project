@@ -44,9 +44,31 @@ div.search{
 			height: 150px;
 		}
 
+		.base-footer {
+			top: 150px;
+		}
+
 		.main-content {
 			top: 50px;
 		}
+
+	}
+
+	@media only screen and (max-width: 800px) {
+		footer a {
+			display: block;
+		}
+	}
+
+	@media only screen and (max-width: 480px) {
+		.title-bar{
+			height: 200px;
+		}		
+		.main-content {
+			top: 100px;
+		}
+
+
 	}
 
 /* title bar quadrants  */
@@ -159,6 +181,7 @@ div.search{
 
 /* footer of base html */
 
+
 	.base-footer {
 		display: flex;
 		padding: 0px;
@@ -184,3 +207,8 @@ div.search{
 		color: white;
 		background-color: black;
 	}
+
+	.newline-resize {
+		display: none;
+	}
+
