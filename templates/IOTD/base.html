@@ -4,7 +4,7 @@
 
 <html>
 	<head>
-
+       
 		<link rel="stylesheet" href="{% static 'css/base.css' %}">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script src="{% static 'js/base.js' %}" type="text/javascript"></script>
@@ -28,26 +28,35 @@
 	<body>
 
 		<div class="holder">
-
-		<div class="title-bar">
+          
+            {% ifnotequal profile "empty"%}
+            <meta http-equiv="refresh" content="0; url='{% url 'IOTD:image_search' profile=profile %}'" />
+            {%endifnotequal%}
+            
+           
+        <div class="title-bar">
+            {% url 'IOTD:login' as home_url %}
+            {% ifnotequal request.get_full_path  home_url %}
 			<div class="title-search">
-				<input class="search"type="text" id="tags">
-                    <script>
-                        $( function() {
+                <form action = "" method = "post">
+                    {% csrf_token %}
+                    
+                
+				<input class="search ui-autocomplete-input remove-input" type="text" id="tags" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true"name="search" >
+                    
+                <script type="text/javascript">
                             var availableTags = [
                                 {% for profile in profiles %}
                                  "{{profile.name}}",
                                 {% endfor %}
                             ];
-                            $( "#tags" ).autocomplete({
-                            source: availableTags
-                            });
-                        } );
-              </script>
-				
-
+                           
+                    </script>
+              
+				 </form>
+                 
 			</div>
-
+            {%endifnotequal%}
 			<div class="title-text-container">
 				<h1 class="title-text">
 					<a href="{% url 'IOTD:home' %}">Image of the day</a>
@@ -56,9 +65,10 @@
 
 			<div class="title-account">
 				{% if user.is_authenticated %}
-				    <div class="image-frame">
-		    			<a href="my-account"><img src="" alt="user profile image"></a>
-		    		</div>
+                
+                <button class="title-button">
+                        <a href="{% url 'IOTD:myAccount' %}">My Image</a>
+                </button>
 			    {% else %}
 		    		<button class="title-button">
 		    			<a href="{% url 'IOTD:login' %}"> Sign In</a>
@@ -76,7 +86,7 @@
 				
 				{% if user.is_authenticated %}
 					<a href="{% url 'IOTD:logout' %}"> Log Out</a>&nbsp;&nbsp;&nbsp;
-					<a href="{% url 'IOTD:myAccount' %}"> My Account</a>&nbsp;&nbsp;&nbsp;
+					<a href="{% url 'IOTD:myAccount' %}"> My Image</a>&nbsp;&nbsp;&nbsp;
 					<a href="{% url 'IOTD:voteImage' %}"> Vote For An Image</a>&nbsp;&nbsp;&nbsp;
 					<a href="{% url 'IOTD:upload' %}"> Upload An Image</a>&nbsp;&nbsp;&nbsp;
 				{% else %}

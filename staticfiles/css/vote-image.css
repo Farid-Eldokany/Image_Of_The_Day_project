@@ -82,7 +82,7 @@
 }
 
 .loved-it {
-	z-index: 10;
+	z-index: 1;
 	position: absolute;
 	width: 50%;
 	font-size: 10px;
@@ -91,7 +91,7 @@
 
 }
 .report{
-    z-index: 10;
+    z-index: 2;
 	position: absolute;
 	width: 50%;
 	font-size: 10px;
@@ -101,7 +101,7 @@
 }
 .report-text{
     color: white;
-	z-index: 11;
+	z-index: auto;
 	background-color: black;
 	border: none;
 	left: 12.5%;
@@ -111,16 +111,17 @@
 	transition-duration: 0.1s;
 	content: 'Report';
 }
-.report:hover {
-	cursor: pointer;
+.report-text span {
+	background-color: black;
+    transition-duration: 0.1s;
 }
-.loved-it:hover {
+.report:hover {
 	cursor: pointer;
 }
 
 .loved-it-text {
 	color: white;
-	z-index: 11;
+	z-index: auto;
 	background-color: black;
 	border: none;
 	left: 12.5%;
@@ -140,7 +141,7 @@
 .loved-it-counter {
 	color: white;
 	background-color: black;
-	z-index: 11;
+	z-index: auto;
 	left:12.5%;
 	position: absolute;
 	font-size: 15px;
@@ -151,25 +152,24 @@
 .loved-it-counter span {
 	background-color: black;
 }
-
+.loved-it:hover {
+	cursor: pointer;
+}
 .hated-it {
-	z-index: 10;
+	z-index: 3;
 	position: absolute;
 	width: 50%;
 	right: 0%;
 	font-size: 10px;
 	height: 400px;
 	transition-duration: 0.1s;
-
 }
 
-.hated-it:hover {
-	cursor: pointer;
-}
+
 
 .hated-it-text {
 	color: white;
-	z-index: 11;
+	z-index: auto;
 	background-color: black;
 	border: none;
 	position: absolute;
@@ -188,7 +188,7 @@
 .hated-it-counter {
 	color: white;
 	background-color: black;
-	z-index: 11;
+	z-index: auto;
 	right:12.5%;
 	position: absolute;
 	font-size: 15px;
@@ -197,5 +197,39 @@
 
 .hated-it-counter span {
 	background-color: black;
+    transition-duration: 0.1s;
+}
+.hated-it:hover {
+	cursor: pointer;
+}
+.name{
+    z-index: 0;
+	position: absolute;
+	width: 50%;
+	font-size: 10px;
+    right:0%;
+	height: 400px;
+	transition-duration: 0.1;
+}
+.name-text{
+    color: white;
+	background-color: black;
+	z-index: auto;
+    right: 80%;
+	position: absolute;
+	font-size: 15px;
+	top: 5%;
+}
+.name-text span {
+	background-color: black;
 }
 
+.next{
+    color: white;
+	background-color: black;
+	z-index: auto;
+    right: 80%;
+	position: absolute;
+	font-size: 15px;
+	top: 5%;
+}

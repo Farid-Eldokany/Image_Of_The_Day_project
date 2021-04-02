@@ -4,12 +4,12 @@
 {% block maincontent_block %}
 {% block importblock %}
     <link rel="stylesheet" href="{% static 'css/vote-image.css' %}">
-    <script src="{% static 'js/vote-image.js' %}"></script>
+    <script src="{% static 'js/home.js' %}"></script>
 {% endblock %}
 
     <div class="showcaseContainer">
 
-        {% for image in images %}
+        {% for image in contacts %}
 
 
         <div class="showcaseImage" id="{{image}}{{image.id}}">
@@ -17,15 +17,18 @@
 
            <form id="user_form{{image.image_id}}" method="post" action="/home/vote-image/" 16="" enctype="multipart/form-data">
                 {% csrf_token %}
+                <div class="name">
+                    <h2 class="name-text"><span><b>{{image.name}}</b></span></h2>
+                </div>
                      <div class="loved-it">
                     
                         <button class="loved-it-text" type="submit" name="like" value="{{image.image_id}}">Loved It</button>
                         <h2 class="loved-it-counter"><span><b>{{image.likes}}</b></span></h2>
                     </div>
                     <div class="report">
-                    
                         <button class="report-text" type="submit" name="report" value="{{image.image_id}}">Report</button>
                     </div>
+
                      <div class="hated-it">
 
                         <button class="hated-it-text" type="submit" name="dislike" value="{{image.image_id}}">Hated It</button>
@@ -34,16 +37,35 @@
                      </div>
                         <img class="displayed-image" src={{image.picture.url}} alt="image"width="400" 
                         height="500">
-                
-
-            
-                <!--<h5>{{image.name}}</h5>-->
              </form>
          </div>
          {% endfor %}
+         <div class="pagination">
+            <span class="step-links">
+                {% if contacts.has_previous %}
+                    <a href="?page=1">&laquo; first</a>
+                    <a href="?page={{ contacts.previous_page_number }}">previous</a>
+                {% endif %}
+        
+                <span class="current">
+                    Page {{ contacts.number }} of {{ contacts.paginator.num_pages }}.
+                </span>
+        
+                {% if contacts.has_next %}
+                    <a href="?page={{ contacts.next_page_number }}">next</a>
+                    <a href="?page={{ contacts.paginator.num_pages }}">last &raquo;</a>
+                {% endif %}
+            </span>
+        </div>
      </div>
 
          
 
 
 {% endblock %}
+
+
+
+
+
+

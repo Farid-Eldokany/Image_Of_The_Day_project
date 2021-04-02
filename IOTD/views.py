@@ -7,8 +7,10 @@ from IOTD.forms import UserForm, UserProfileForm,VoteForm,ReportForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
 from IOTD.models import UserProfile,Vote,Day,Total,Report
+from django.contrib.auth.models import User
 from django.core.exceptions import ObjectDoesNotExist
 import datetime
+from django.core.paginator import Paginator
 def home(request):
     context_dict={}
     #gets the the todays day name
@@ -39,6 +41,10 @@ def home(request):
         
 @login_required
 def voteImage(request):
+    contact_list = UserProfile.objects.all()
+    paginator = Paginator(contact_list, 10) # Show 25 contacts per page
+    page = request.GET.get('page')
+    contacts = paginator.get_page(page)
     username=str(request.user.username)
     vote_instance = Vote()
     report_instance=Report()
@@ -129,13 +135,15 @@ def voteImage(request):
                     report.save()
                     
                 return redirect(reverse('IOTD:image_report', args=(report_id,)))
+            else:
+                return error(request,'Error occured refresh the website.')
             userprofile.save()
             vote.vote_id=username+image_id
             vote.vote_type=vote_type
             vote.save()
     else:
         vote_form = VoteForm()
-    return render(request,"IOTD/vote-image.html",context={'images':UserProfile.objects.all(),'vote_form':vote_form})
+    return render(request,"IOTD/vote-image.html",context={'contacts':contacts,'vote_form':vote_form})
 def user_login(request):
     # IOTD/loginpage.html
     user_form = UserForm(request.POST)
@@ -157,7 +165,6 @@ def user_login(request):
                     return error(request,"Your account is disabled.")
             else:
                 # Bad login details were provided. So we can't log the user in.
-                print(f"Invalid login details: {username}, {password}")
                 return error(request,"Invalid login details supplied.")
         #checks if the user has pressed the register submit button
         elif 'Signup' in request.POST:
@@ -170,14 +177,17 @@ def user_login(request):
                 total.likes=0
                 total.save()
                 user.save()
-                return redirect(reverse('IOTD:home'))
+                return error(request,'Thank you for registrating.')
+            else:
+                 return error(request,"This username already exists.")
         else:
             print(user_form.errors)
     return render(request, 'IOTD/loginpage.html', context={'user_form': user_form})
 @login_required
 def upload(request):
     try:
-        UserProfile_instance = UserProfile.objects.get(user=request.user)
+        UserProfile_instance = UserProfile.objects.get(user=request.user)    
+        UserProfile_instance.delete()
     except UserProfile.DoesNotExist:
         UserProfile_instance = UserProfile(user=request.user)
     #checks if the request method type is post
@@ -186,15 +196,20 @@ def upload(request):
         #checks if the form submitted is valid
         if profile_form.is_valid() :
             imageName=request.POST.get('name')
-            profile = profile_form.save(commit=False)
-            profile.user = request.user
-            profile.image_id=str(profile.user.username)+imageName
-            #checks if a picture has been uploaded
-            if 'picture' in request.FILES:
-                profile.picture = request.FILES['picture']
-            else:
-                return error(request,"You have not uploaded a picture.")
-            profile.save()
+            try: 
+                UserProfile.objects.get(name=request.user)
+                return error(request,"This image name is already used.")
+            except ObjectDoesNotExist:
+                profile = profile_form.save(commit=False)
+                profile.user = request.user
+                profile.image_id=str(profile.user.username)+imageName
+                #checks if a picture has been uploaded
+                if 'picture' in request.FILES:
+                    profile.picture = request.FILES['picture']
+                else:
+                    return error(request,"You have not uploaded a picture.")
+                profile.save()
+                return error(request,"Image uploaded succesfully.")
         else:
             print(profile_form.errors)
     else:
@@ -224,7 +239,12 @@ def image_report(request,report_id):
     if'submit' in request.POST:
         reason=request.POST["reason"]
         report=Report.objects.get(report_id=report_id)
+        if(reason==""):
+            report.delete()
+            return error(request,"No reason was submitted, therefore the report has been removed.")
         report.reason=reason
         report.save()
-        return error(request,"Report submitted.")
+        return error(request,"Report submitted and will be reviewed shortly.")
     return render(request, 'IOTD/image_report.html', context={})
+def image_search(request,profile):
+    return render(request, 'IOTD/image_search.html', context={"image":UserProfile.objects.get(name=profile)}) 

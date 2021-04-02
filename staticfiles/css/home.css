@@ -16,6 +16,30 @@
 	height: 100%;
 
 }
+.report{
+    z-index: 10;
+	position: absolute;
+	width: 50%;
+	font-size: 10px;
+    right:15%;
+	height: 400px;
+	transition-duration: 0.1;
+}
+.report-text{
+    color: white;
+	z-index: 11;
+	background-color: black;
+	border: none;
+	left: 12.5%;
+	position: absolute;
+	font-size: 20px;
+	bottom: 10%;
+	transition-duration: 0.1s;
+	content: 'Report';
+}
+.report:hover {
+	cursor: pointer;
+}
 .image-details {
 	width: 400px;
 	height: 100px;
@@ -160,4 +184,29 @@
 	background-color: white;
 	border-right: 35px;
 	font-size: 50px;
+}
+.name{
+    z-index: 20;
+	position: absolute;
+	width: 50%;
+	right: 15%;
+	font-size: 10px;
+	height: 400px;
+	transition-duration: 0.1s;
+    
+}
+.name-text{
+    color: white;
+	background-color: black;
+	z-index: 21;
+    left: 10%;
+	position: absolute;
+	font-size: 15px;
+	top: 2.3%;
+}
+.name-text span {
+	background-color: black;
+}
+.name:hover {
+	cursor: pointer;
 }

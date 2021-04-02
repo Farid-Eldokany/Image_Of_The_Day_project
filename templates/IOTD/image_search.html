@@ -1,0 +1,29 @@
+{% extends 'IOTD/base.html' %}
+{% load staticfiles %}
+{% block importblock %}
+<link rel="stylesheet" href="{% static 'css/my-account.css' %}">
+<script src="{% static 'js/my-account.js' %}"></script>
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+	<script src="{% static 'js/home.js' %}"></script>
+{% endblock %}
+{% block title_block %} Result {% endblock %}
+{% block maincontent_block %}
+<div style="height:900px">
+
+    <h1 class="my-account-title"> Image searched</h1>
+
+       <div class="image-container">
+        <div class="loved-it"></div>
+        <div class="name">
+            <h2 class="name-text"><span><b>{{image.name}}</b></span></h2>
+        </div>
+        <h1 class="loved-it-text"><span><b>Loved It</b></span></h1>
+        <h2 class="loved-it-counter"><span><b>{{image.likes}}</span></h2>
+        <div class="hated-it"></div>
+        <h1 class="hated-it-text"><span><b>Hated It</b></span></h1>
+        <h2 class="hated-it-counter"><span><b>{{image.dislikes}}</span></b></h2>
+
+   		<img class="displayed-image" src={{image.picture.url}} alt="image">
+
+   	</div>
+{% endblock %}
