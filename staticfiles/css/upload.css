@@ -3,40 +3,60 @@ body {
 	background-color: #EAF1F1;
 }
 
-.upload-title {
-	
-	position: relative;
-	top: 100px;
-	text-align: center;
-	font-size: 30px;
-}
+/* title formatting */
 
-h1 span {
-	background-color: white;
-	padding: 20px;
-	border-radius: 35px;
-}
+	.upload-title {
+		
+		position: relative;
+		top: 100px;
+		text-align: center;
+		font-size: 30px;
+	}
+
+	h1 span {
+		background-color: white;
+		padding: 20px;
+		border-radius: 35px;
+	}
 
 
-div.upload-area {
-    position: relative;
-    width: 500px;
-    height: auto;
-    top: 100px;
-    text-align: center;
-    background-color: white;
-	padding: 20px;
-	border-radius: 35px;
-	margin: 0 auto;
-}
+/* code for the area used to display the upload
+form aswell as the code that adjusts the size based
+on browser size */
 
-button {
-	border-radius: 15px;
-	border-color: black;
-	background-color: white;
-	transition-duration: 0.2s;
-	width: 75px;
-	height: 25px;
-	font-weight:bold;
-	border-width: 5px;
-}
+	div.upload-area {
+	    position: relative;
+	    width: 500px;
+	    height: auto;
+	    top: 100px;
+	    text-align: center;
+	    background-color: white;
+		padding: 20px;
+		border-radius: 35px;
+		margin: 0 auto;
+	}
+
+	@media only screen and (max-width: 550px) {
+		div.upload-area {
+			width: 400px;
+		}
+	}
+
+	@media only screen and (max-width: 450px) {
+		div.upload-area {
+			width: 300px;
+		}	
+	}
+
+/* button styling */
+
+	button {
+		border-radius: 15px;
+		border-color: black;
+		background-color: white;
+		transition-duration: 0.2s;
+		width: 75px;
+		height: 25px;
+		font-weight:bold;
+		border-width: 5px;
+	}

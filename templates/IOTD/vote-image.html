@@ -21,7 +21,7 @@
                     <h2 class="name-text"><span><b>{{image.name}}</b></span></h2>
                 </div>
                      <div class="loved-it">
-                    
+
                         <button class="loved-it-text" type="submit" name="like" value="{{image.image_id}}">Loved It</button>
                         <h2 class="loved-it-counter"><span><b>{{image.likes}}</b></span></h2>
                     </div>
@@ -32,11 +32,11 @@
                      <div class="hated-it">
 
                         <button class="hated-it-text" type="submit" name="dislike" value="{{image.image_id}}">Hated It</button>
-                        <h2 class="hated-it-counter"><span><b>{{image.dislikes}}</b></span></h2>                         
+                        <h2 class="hated-it-counter"><span><b>{{image.dislikes}}</b></span></h2>
 
                      </div>
-                        <img class="displayed-image" src={{image.picture.url}} alt="image"width="400" 
-                        height="500">
+                        <img class="displayed-image" src={{image.picture.url}} alt="image"width="400px" 
+                        height="400px">
              </form>
          </div>
          {% endfor %}
@@ -46,11 +46,11 @@
                     <a href="?page=1">&laquo; first</a>
                     <a href="?page={{ contacts.previous_page_number }}">previous</a>
                 {% endif %}
-        
+
                 <span class="current">
                     Page {{ contacts.number }} of {{ contacts.paginator.num_pages }}.
                 </span>
-        
+
                 {% if contacts.has_next %}
                     <a href="?page={{ contacts.next_page_number }}">next</a>
                     <a href="?page={{ contacts.paginator.num_pages }}">last &raquo;</a>
@@ -59,7 +59,7 @@
         </div>
      </div>
 
-         
+
 
 
 {% endblock %}

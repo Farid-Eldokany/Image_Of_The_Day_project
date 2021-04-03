@@ -1,18 +1,17 @@
-html,body {
-	margin: 0;
-	font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
-	overflow: scroll;
-	height: 100%;
-}
+/* general page changes */
 
-.holder {
-	display: grid;
-}
-div.search{
-    position: relative;
-    width: 500px;
-    height:  500 px;
-}
+	html,body {
+		margin: 0;
+		font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+		overflow: scroll;
+		height: 100%;
+		overflow-x: hidden;
+	}
+
+	.holder {
+		display: grid;
+	}
+
 /* initialisation for any hyperlinks */
 	a {
 		text-decoration: none;
@@ -23,6 +22,11 @@ div.search{
 	a:visited {
 		text-decoration: none;
 		color: black;
+	}
+
+	a:hover {
+		color: white;
+		background-color: black;
 	}
 
 /* title bar full container */
@@ -52,12 +56,6 @@ div.search{
 			top: 50px;
 		}
 
-	}
-
-	@media only screen and (max-width: 800px) {
-		footer a {
-			display: block;
-		}
 	}
 
 	@media only screen and (max-width: 480px) {
@@ -130,16 +128,11 @@ div.search{
 		color: black;
 	}
 
-	.search-results {
-		z-index: 40;
-		position: fixed;
-		top: 80px;
-		width: 20vw;
-		left: 2.5vw;
-		height: 200px;
-		background-color: #b4cfc7;
-		color: #535c54;
-		overflow-y: scroll;
+
+	div.search{
+   	 position: relative;
+   	 width: 500px;
+   	 height:  500 px;
 	}
 
 /* title text */
@@ -156,10 +149,8 @@ div.search{
 	/* sign in button */
 		.title-button {
 			position: relative;
-			
 			background-color: transparent;
 			border: none;
-			cursor: pointer;
 			font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
 			font-size: 20px;
 			width: 100%;
@@ -186,7 +177,6 @@ div.search{
 		display: flex;
 		padding: 0px;
 		width: 100%;
-		height: 150px;
 		background-color: white;
 
 		margin: 0;
@@ -203,12 +193,13 @@ div.search{
 
 	}
 
-	a:hover {
-		color: white;
-		background-color: black;
-	}
-
 	.newline-resize {
 		display: none;
+	}
+
+	@media only screen and (max-width: 800px) {
+		footer a {
+			display: block;
+		}
 	}
 

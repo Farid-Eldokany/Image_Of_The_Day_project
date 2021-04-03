@@ -4,61 +4,51 @@
 
 <html>
 	<head>
-       
 		<link rel="stylesheet" href="{% static 'css/base.css' %}">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script src="{% static 'js/base.js' %}" type="text/javascript"></script>
-        <script src=  
-        "https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js">  
-            </script>  
-            
-            <script src=  
-        "https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js">  
-            </script>  
-            
-            <link href=  
-        "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/ui-lightness/jquery-ui.css"
-                rel="stylesheet" type="text/css" />  
-		{% block importblock %} {% endblock %}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js"></script>
+        <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/ui-lightness/jquery-ui.css"rel="stylesheet" type="text/css" />
+		{% block importblock %}{% endblock %}
 
 		<title>
-			{% block title_block %}  {% endblock %}
+			{% block title_block %}{% endblock %}
 		</title>
 	</head>
 	<body>
 
 		<div class="holder">
-          
+
             {% ifnotequal profile "empty"%}
-            <meta http-equiv="refresh" content="0; url='{% url 'IOTD:image_search' profile=profile %}'" />
+            	<meta http-equiv="refresh" content="0; url='{% url 'IOTD:image_search' profile=profile %}'" />
             {%endifnotequal%}
-            
-           
-        <div class="title-bar">
-            {% url 'IOTD:login' as home_url %}
-            <div class="title-search">
-            {% ifnotequal request.get_full_path  home_url %}
-			
-                <form action = "" method = "post">
-                    {% csrf_token %}
-                    
-                
-				<input class="search ui-autocomplete-input remove-input" type="text" id="tags" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true"name="search" >
-                    
-                <script type="text/javascript">
-                            var availableTags = [
-                                {% for profile in profiles %}
-                                 "{{profile.name}}",
-                                {% endfor %}
-                            ];
-                           
-                    </script>
-              
-				 </form>
-                 
-			
-            {%endifnotequal%}
+
+        	<div class="title-bar">
+            	{% url 'IOTD:login' as home_url %}
+            		<div class="title-search">
+
+            		{% ifnotequal request.get_full_path  home_url %}
+
+                		<form action = "" method = "post">
+
+                  			{% csrf_token %}
+
+							<input class="search ui-autocomplete-input remove-input" type="text" id="tags" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true"name="search" >
+
+                			<script type="text/javascript">
+                            	var availableTags = [
+                               		{% for profile in profiles %}
+                                 		"{{profile.name}}",
+                                	{% endfor %}
+                            	];
+                    		</script>
+				 		</form>
+
+            		{%endifnotequal%}
+
             </div>
+
 			<div class="title-text-container">
 				<h1 class="title-text">
 					<a href="{% url 'IOTD:home' %}">Image of the day</a>
@@ -67,10 +57,9 @@
 
 			<div class="title-account">
 				{% if user.is_authenticated %}
-                
-                <button class="title-button">
-                        <a href="{% url 'IOTD:myAccount' %}">My Image</a>
-                </button>
+	                <button class="title-button">
+	                    <a href="{% url 'IOTD:myAccount' %}">My Image</a>
+	                </button>
 			    {% else %}
 		    		<button class="title-button">
 		    			<a href="{% url 'IOTD:login' %}"> Sign In</a>
@@ -78,10 +67,11 @@
 	    		{% endif %}
 			</div>
 		</div>
+
 		<div class="main-content">
-		{% block maincontent_block %}
-			
-		{% endblock %}
+			{% block maincontent_block %}
+
+			{% endblock %}
 		</div>	
 		<footer class="base-footer">
 			<div class="footer-box-2">
@@ -94,7 +84,12 @@
 					<a href="{% url 'IOTD:login' %}"> Sign In</a>	&nbsp;&nbsp;&nbsp;
 				{% endif %}
 
+				{% url 'IOTD:home' as home_url %}
+            	{% ifnotequal request.get_full_path  home_url %}
+
 				<a href="{% url 'IOTD:home' %}"> Home</a>&nbsp;&nbsp;&nbsp;
+
+				{% endifnotequal %}
 
 
 			</div>

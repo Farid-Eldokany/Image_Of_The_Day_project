@@ -1,61 +1,71 @@
-html {
-	overflow-x: hidden;
-}
+/* styling surrounding the image displayed
+on the users account page and the text to be
+displayed over it */
+	.image-container {
+		z-index: 5;
+		width: 400px;
+		height: 400px;
+		top: 150px;
+		position: relative;
+		margin: auto;
+		background-color: white;
+		padding: 40px;
+		border-color: white;
+		border-radius: 35px;
+	}
 
-.image-container {
-	z-index: 5;
-	width: 400px;
-	height: 400px;
-	top: 150px;
-	position: relative;
-	margin: auto;
-	background-color: white;
-	padding: 40px;
-	border-color: white;
-	border-radius: 35px;
-}
+	.displayed-image {
+		width: 400px;
+		height:  400px;
 
-.displayed-image {
-	width: 400px;
-	height:  400px;
+	}
+	.image-details {
+		width: 400px;
+		height: 100px;
+		top:50px;
+		position: relative;
+		margin: auto;
+		display: flex;
+		text-align: center;
+		color: black;
+	}
+	.name{
+	    z-index: 20;
+		position: absolute;
+		width: 400px;
+		background-color: black;
+		bottom: 40px;
+	    left: 40px;
+	    height: 15px;
+	    text-align: center;
+	    padding-top: 5px;
+	    padding-bottom: 5px;
+	}
+	.name-text{
+	    color: white;
+		font-size: 15px;
+	}
 
-}
-.image-details {
-	width: 400px;
-	height: 100px;
-	top:50px;
-	position: relative;
-	margin: auto;
-	display: flex;
-	text-align: center;
-	color: black;
-}
+/* styling for users total score and the page title */
+	.users-score {
+		margin: 0 auto;
+		top: 200px;
+		position: relative;
+		text-align: center;
+		height: auto;
+		width: auto;
+		margin: 0;
+	}
 
+	h1,h3 {
+		background-color: white;
 
-.hated-it-counter span {
-	background-color: black;
-}
+	}
 
-.users-score {
-	margin: 0 auto;
-	top: 200px;
-	position: relative;
-	text-align: center;
-	height: auto;
-	width: auto;
-	margin: 0;
+	.my-account-title {
+		position: relative;
+		top: 100px;
+		font-size: 40px;
+		text-align: center;
+	}
 
-
-}
-
-h1,h3 {
-	background-color: white;
-
-}
-
-.my-account-title {
-	position: relative;
-	top: 100px;
-	font-size: 40px;
-	text-align: center;
-}

@@ -2,14 +2,16 @@
 		margin: 0;
 		background-color: #EAF1F1;
 	}
-		
+
+/* styling for image displaying in a grid container with
+mobile suitable resizing */
 	.showcase {
 		width: 400px;
 		height: 450px;
 		margin: 25px;
 		position: relative;
 
-	}	
+	}
 
 	.showcaseContainer {
 		display: grid;
@@ -21,16 +23,12 @@
  		border-radius: 35px;
  		overflow-y: scroll;
  		align-items: center;
-
-
-
  	}
-
 
  	.showcaseImage {
   		height: 400px;
   		background-size: cover;
-		height: 400px;
+		width: 400px;
 		transition-duration: 1s;
 		z-index: 5;
 		position: relative;
@@ -39,9 +37,6 @@
 		max-height: 400px;
 	}
 
-	.base-footer {
-		position: relative;
-	}
 
 	@media only screen and (max-width: 1400px) {
 
@@ -61,174 +56,161 @@
 		}
 	}
 
-.displayed-image {
-	display: inline-block;
-    width: 400px;
-    vertical-align: middle;
-    max-height: 400px;
-}
+	.displayed-image {
+		display: inline-block;
+	    width: 400px;
+	    vertical-align: middle;
+	    max-height: 400px;
+	}
+
+/* styling for information and inputs ontop of image */
+	.image-details {
+		width: 400px;
+		height: 100px;
+		top:50px;
+		position: relative;
+		margin: auto;
+		display: flex;
+		text-align: center;
+		color: black;
+	}
+
+	.loved-it {
+		z-index: 1;
+		position: absolute;
+		width: 33%;
+		font-size: 10px;
+		height: 400px;
+		transition-duration: 0.1;
+
+	}
+	.report{
+	    z-index: 2;
+		position: absolute;
+		width: 33%;
+		font-size: 10px;
+	    left: 145px;
+		height: 400px;
+		transition-duration: 0.1;
+	}
+	.report-text{
+	    color: white;
+		z-index: auto;
+		background-color: black;
+		border: none;
+		left: 12.5%;
+		position: absolute;
+		font-size: 20px;
+		bottom: 10%;
+		transition-duration: 0.1s;
+		content: 'Report';
+	}
+	.report-text span {
+		background-color: black;
+	    transition-duration: 0.1s;
+	}
+	.report:hover {
+		cursor: pointer;
+	}
+
+	.loved-it-text {
+		color: white;
+		z-index: auto;
+		background-color: black;
+		border: none;
+		left: 12.5%;
+		position: absolute;
+		font-size: 20px;
+		bottom: 10%;
+		transition-duration: 0.1s;
+		content: 'Loved It';
+
+	}
+
+	.loved-it-text span {
+		background-color: black;
+		transition-duration: 0.1s;
+	}
+
+	.loved-it-counter {
+		color: white;
+		background-color: black;
+		z-index: auto;
+		left:12.5%;
+		position: absolute;
+		font-size: 15px;
+		top: 5%;
+
+	}
+
+	.loved-it-counter span {
+		background-color: black;
+	}
+	.loved-it:hover {
+		cursor: pointer;
+	}
+	.hated-it {
+		z-index: 3;
+		position: absolute;
+		width: 33%;
+		right: 0%;
+		font-size: 10px;
+		height: 400px;
+		transition-duration: 0.1s;
+	}
 
 
-.image-details {
-	width: 400px;
-	height: 100px;
-	top:50px;
-	position: relative;
-	margin: auto;
-	display: flex;
-	text-align: center;
-	color: black;
-}
 
-.loved-it {
-	z-index: 1;
-	position: absolute;
-	width: 50%;
-	font-size: 10px;
-	height: 400px;
-	transition-duration: 0.1;
+	.hated-it-text {
+		color: white;
+		z-index: auto;
+		background-color: black;
+		border: none;
+		position: absolute;
+		right: 12.5%;
+		font-size: 20px;
+		bottom: 10%;
+		transition-duration: 0.1s;
+		content: 'Hated It';
+	}
 
-}
-.report{
-    z-index: 2;
-	position: absolute;
-	width: 50%;
-	font-size: 10px;
-    right:15%;
-	height: 400px;
-	transition-duration: 0.1;
-}
-.report-text{
-    color: white;
-	z-index: auto;
-	background-color: black;
-	border: none;
-	left: 12.5%;
-	position: absolute;
-	font-size: 20px;
-	bottom: 10%;
-	transition-duration: 0.1s;
-	content: 'Report';
-}
-.report-text span {
-	background-color: black;
-    transition-duration: 0.1s;
-}
-.report:hover {
-	cursor: pointer;
-}
+	.hated-it-text span{
+		background: black;
+		transition-duration: 0.1s;
+	}
 
-.loved-it-text {
-	color: white;
-	z-index: auto;
-	background-color: black;
-	border: none;
-	left: 12.5%;
-	position: absolute;
-	font-size: 20px;
-	bottom: 10%;
-	transition-duration: 0.1s;
-	content: 'Loved It';
+	.hated-it-counter {
+		color: white;
+		background-color: black;
+		z-index: auto;
+		right:12.5%;
+		position: absolute;
+		font-size: 15px;
+		top: 5%;
+	}
 
-}
-
-.loved-it-text span {
-	background-color: black;
-	transition-duration: 0.1s;
-}
-
-.loved-it-counter {
-	color: white;
-	background-color: black;
-	z-index: auto;
-	left:12.5%;
-	position: absolute;
-	font-size: 15px;
-	top: 5%;
-
-}
-
-.loved-it-counter span {
-	background-color: black;
-}
-.loved-it:hover {
-	cursor: pointer;
-}
-.hated-it {
-	z-index: 3;
-	position: absolute;
-	width: 50%;
-	right: 0%;
-	font-size: 10px;
-	height: 400px;
-	transition-duration: 0.1s;
-}
-
-
-
-.hated-it-text {
-	color: white;
-	z-index: auto;
-	background-color: black;
-	border: none;
-	position: absolute;
-	right: 12.5%;
-	font-size: 20px;
-	bottom: 10%;
-	transition-duration: 0.1s;
-	content: 'Hated It';
-}
-
-.hated-it-text span{
-	background: black;
-	transition-duration: 0.1s;
-}
-
-.hated-it-counter {
-	color: white;
-	background-color: black;
-	z-index: auto;
-	right:12.5%;
-	position: absolute;
-	font-size: 15px;
-	top: 5%;
-}
-
-.hated-it-counter span {
-	background-color: black;
-    transition-duration: 0.1s;
-}
-.hated-it:hover {
-	cursor: pointer;
-}
-.name{
-    z-index: 0;
-	position: absolute;
-	width: 50%;
-	font-size: 10px;
-    right:0%;
-	height: 400px;
-	transition-duration: 0.1;
-}
-.name-text{
-    color: white;
-	background-color: black;
-	z-index: auto;
-    right: 80%;
-	position: absolute;
-	font-size: 15px;
-	top: 5%;
-}
-.name-text span {
-	background-color: black;
-}
-
-.next{
-    color: white;
-	background-color: black;
-	z-index: auto;
-    right: 80%;
-	position: absolute;
-	font-size: 15px;
-	top: 5%;
-}
+	.hated-it-counter span {
+		background-color: black;
+	    transition-duration: 0.1s;
+	}
+	.hated-it:hover {
+		cursor: pointer;
+	}
+	.name{
+	    z-index: 10;
+		position: absolute;
+		width: 50%;
+		font-size: 10px;
+		height: 400px;
+		left: 47.5%;
+		transition-duration: 0.1;
+	}
+	.name-text{
+	    color: white;
+		background-color: black;
+		z-index: auto;
+	    right: 80%;
+		position: absolute;
+		font-size: 15px;
+		top: 5%;
+	}

@@ -1,7 +1,10 @@
-div.error { 
-    font-family: "Courier New";
-    font-size: .83em;
-    font-weight: bold;
-    text-align: center;
-    height:100px;
-  }
+
+/* Initialisation of text display for error page */
+
+	div.error { 
+	    font-family: "Courier New";
+	    font-size: .83em;
+	    font-weight: bold;
+	    text-align: center;
+	    height:100px;
+	}
