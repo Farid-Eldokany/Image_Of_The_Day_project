@@ -76,6 +76,7 @@
 		<footer class="base-footer">
 			<div class="footer-box-2">
 				{% if user.is_authenticated %}
+                    <a href="{% url 'IOTD:error' error='Contact us through this mail:support@image-of-the-day.co.uk' %}"> Contact Us</a>&nbsp;&nbsp;&nbsp;
 					<a href="{% url 'IOTD:logout' %}"> Log Out</a>&nbsp;&nbsp;&nbsp;	
 					<a href="{% url 'IOTD:myAccount' %}"> My Image</a>&nbsp;&nbsp;&nbsp;	
 					<a href="{% url 'IOTD:voteImage' %}"> Vote For An Image</a>&nbsp;&nbsp;&nbsp;	

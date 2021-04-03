@@ -11,6 +11,7 @@ from django.contrib.auth.models import User
 from django.core.exceptions import ObjectDoesNotExist
 import datetime
 from django.core.paginator import Paginator
+#first page that the user sees
 def home(request):
     context_dict={}
     #gets the the todays day name
@@ -38,7 +39,7 @@ def home(request):
     except ObjectDoesNotExist:
         set_day = Day.objects.create(day=today)
         return render(request, 'IOTD/homepage.html')
-        
+#takes the votes of the user on the image to change its dislikes/likes and also lets the user report it        
 @login_required
 def voteImage(request):
     contact_list = UserProfile.objects.all()
@@ -144,6 +145,7 @@ def voteImage(request):
     else:
         vote_form = VoteForm()
     return render(request,"IOTD/vote-image.html",context={'contacts':contacts,'vote_form':vote_form})
+# displays the form for the user login and registeration
 def user_login(request):
     # IOTD/loginpage.html
     user_form = UserForm(request.POST)
@@ -183,6 +185,7 @@ def user_login(request):
         else:
             print(user_form.errors)
     return render(request, 'IOTD/loginpage.html', context={'user_form': user_form})
+#uploads the picture that the user uploads
 @login_required
 def upload(request):
     try:
@@ -216,6 +219,7 @@ def upload(request):
         profile_form = UserProfileForm(instance=UserProfile_instance)
         
     return render(request,'IOTD/upload.html',context = {'profile_form': profile_form})
+#shows the image of the user that he uploaded
 @login_required
 def myAccount(request):
     try:
@@ -229,12 +233,14 @@ def myAccount(request):
         return error(request,"You have not uploaded an image yet.")
 def error(request,error):
     return render(request, 'IOTD/error.html', context={'error':error})
+#logs out the user
 @login_required
 def user_logout(request):
     # Since we know the user is logged in, we can now just log them out.
     logout(request)
     # Take the user back to the homepage.
     return redirect(reverse('IOTD:home'))
+#requests a reason input from the user for the admin to know why the image is reported
 def image_report(request,report_id):
     if'submit' in request.POST:
         reason=request.POST["reason"]
@@ -246,5 +252,6 @@ def image_report(request,report_id):
         report.save()
         return error(request,"Report submitted and will be reviewed shortly.")
     return render(request, 'IOTD/image_report.html', context={})
+#shows the searched image
 def image_search(request,profile):
     return render(request, 'IOTD/image_search.html', context={"image":UserProfile.objects.get(name=profile)}) 

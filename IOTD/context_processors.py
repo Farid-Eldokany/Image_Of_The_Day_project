@@ -1,6 +1,7 @@
 from IOTD.models import UserProfile
 from django.utils.datastructures import MultiValueDictKeyError
 from django.core.exceptions import ObjectDoesNotExist
+# loads the base.html with the user profiles
 def profiles(request):
     data={}
     data['profiles']=UserProfile.objects.all()
