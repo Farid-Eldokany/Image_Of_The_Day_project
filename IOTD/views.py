@@ -179,7 +179,7 @@ def user_login(request):
                 total.likes=0
                 total.save()
                 user.save()
-                return error(request,'Thank you for registrating.')
+                return error(request,'Thank you for registering.')
             else:
                  return error(request,"This username already exists.")
         else:
