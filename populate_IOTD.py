@@ -23,6 +23,8 @@ def add_userProfile(user_id,picture,likes,dislikes,name,image_id):
             'username': 'user'+str(user_id),
             'password': 'user'+str(user_id)}
     user=User.objects.create_user(**credentials)
+    total=Total.objects.get_or_create(user=user,likes=0,dislikes=0)
+    total.save()
     p = UserProfile.objects.get_or_create(user=user,picture=picture,likes=likes,dislikes=dislikes,name=name,image_id=image_id)[0]
     p.save()
 if __name__ == '__main__':
