@@ -4,7 +4,7 @@
 {% block maincontent_block %}
 {% block importblock %}
     <link rel="stylesheet" href="{% static 'css/vote-image.css' %}">
-    <script src="{% static 'js/home.js' %}"></script>
+    <script src="{% static 'js/vote-image.js' %}"></script>
 {% endblock %}
 
     <div class="showcaseContainer">
@@ -17,10 +17,10 @@
 
            <form id="user_form{{image.image_id}}" method="post" action="/home/vote-image/" 16="" enctype="multipart/form-data">
                 {% csrf_token %}
-                <div class="name">
-                    <h2 class="name-text"><span><b>{{image.name}}</b></span></h2>
-                </div>
-                     <div class="loved-it">
+                    <div class="name">
+                        <h2 class="name-text"><span><b>{{image.name}}</b></span></h2>
+                    </div>
+                    <div class="loved-it">
 
                         <button class="loved-it-text" type="submit" name="like" value="{{image.image_id}}">Loved It</button>
                         <h2 class="loved-it-counter"><span><b>{{image.likes}}</b></span></h2>
