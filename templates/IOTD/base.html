@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-{% load staticfiles %}
+
 {% load IOTD_template_tags %}
+{% load static %}
 
 <html>
 	<head>
@@ -20,15 +21,15 @@
 
 		<div class="holder">
 
-            {% ifnotequal profile "empty"%}
+            {% if profile != "empty" %}
             	<meta http-equiv="refresh" content="0; url='{% url 'IOTD:image_search' profile=profile %}'" />
-            {%endifnotequal%}
+            {% endif %}
 
         	<div class="title-bar">
             	{% url 'IOTD:login' as home_url %}
             		<div class="title-search">
 
-            		{% ifnotequal request.get_full_path  home_url %}
+            		{% if request.get_full_path != home_url %}
 
                 		<form action = "" method = "post">
 
@@ -45,7 +46,7 @@
                     		</script>
 				 		</form>
 
-            		{%endifnotequal%}
+            		{% endif %}
 
             </div>
 
@@ -86,11 +87,11 @@
 				{% endif %}
 
 				{% url 'IOTD:home' as home_url %}
-            	{% ifnotequal request.get_full_path  home_url %}
+            	{% if request.get_full_path != home_url %}
 
 				<a class="f-resize" href="{% url 'IOTD:home' %}"> Home</a>&nbsp;&nbsp;&nbsp;
 
-				{% endifnotequal %}
+				{% endif %}
 
 
 			</div>
